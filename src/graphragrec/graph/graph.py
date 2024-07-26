@@ -175,7 +175,7 @@ if __name__ == "__main__":
     llm = LocalLLM(api_key=OPENAI_API_KEY)
     file_path = "./output/v9-gpt-4o-mini"
     if not os.path.exists(file_path):
-        os.mkdir(file_path)
+        os.makedirs(file_path)
     G, graph_data = asyncio.run(
         build_and_save_multi_movie_graph(llm, "gpt-4o-mini", use_movies,
                                          file_path))
